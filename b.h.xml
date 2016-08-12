@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<root path="F:\study document\代码测试\test\out file relation\xml\b_8h.xml" name="b.h">
+  <includes local="no">iostream</includes>
+  <includedby path="F:/study document/代码测试/test/file relation/a/a.cpp" type="cpp" local="yes">a.cpp</includedby>
+  <includedby path="F:/study document/代码测试/test/file relation/c/c.cpp" type="cpp" local="yes">c.cpp</includedby>
+</root>
