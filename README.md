@@ -1,0 +1,3 @@
+# DOM4JTestCreateXml
+1 根据路径生成了目录结构保存在一个xml中
+2 从一个xml文件中提取include内容到自建的xml中
