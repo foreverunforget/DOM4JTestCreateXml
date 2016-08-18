@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="GBK"?>
 
-<root path="F:\study document\代码测试\test\out file relation\xml\a_8cpp.xml" name="a.cpp">
-  <includes local="no">iostream</includes>
+<root path="F:\study document\代码测试\test\out file relation\xml\c_8cpp.xml" name="c.cpp">
+  <includes local="no">include</includes>
   <includes path="F:/study document/代码测试/test/file relation/b.h" type="h" local="yes">b.h</includes>
 </root>
