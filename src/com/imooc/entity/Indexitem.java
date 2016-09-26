@@ -1,5 +1,5 @@
 package com.imooc.entity;
-
+//doxygen产生的index.xml
 public class Indexitem {
       private String kind;
       private String refid;

@@ -1,0 +1,8 @@
+digraph file
+{
+node3[label="c.cpp"];
+node1[label="a.cpp"];
+node2[label="b.h"];
+node1->node2;
+node3->node2;
+}

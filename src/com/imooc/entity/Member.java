@@ -1,5 +1,5 @@
 package com.imooc.entity;
-
+//目录结构的层级关系
 public class Member {
      private String id;
      private String level;

@@ -16,10 +16,13 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
+import com.imooc.entity.FileRelation;
 //import com.imooc.entity.Book;
 import com.imooc.entity.Include;
 import com.imooc.entity.Includedby;
 import com.imooc.entity.Indexitem;
+
+import drawpicture.Drawfile;
 
 public class scanner_directory {
 //	private static ArrayList<Book> bookList = new ArrayList<Book>();
@@ -28,8 +31,9 @@ public class scanner_directory {
 	private static ArrayList<String> FilepathList = new ArrayList<String>();
 	/**
 	 * @param args
+	 * @throws IOException 
 	 */
-	public void createXML(String Path,String name){
+	public void createXML(String Path,String name) throws IOException{
 		// 1创建createXML
 				Document document = DocumentHelper.createDocument();
 				// 2创建根节点root
@@ -40,8 +44,20 @@ public class scanner_directory {
 				// 设置生成xml的格式
 				OutputFormat format = OutputFormat.createPrettyPrint();
 				format.setEncoding("GBK");
+				//5.1先生成一个目录outputxml
+				File filedir = new File("outputxml");
+				if(!filedir.exists()){
+					filedir.createNewFile();
+				filedir.mkdir();
+				}
+				//5.2生成一个目录outputtxt
+				File tablelist = new File("outputtable");
+				if(!tablelist.exists())
+				{	//tablelist.createNewFile();
+				    tablelist.mkdir();
+				}
 				// 6.生成xml文件
-				File file = new File(""+name+".xml");
+				File file = new File("outputxml\\"+name+".xml");
 				XMLWriter writer;
 				try {
 					writer = new XMLWriter(new FileOutputStream(file), format);
@@ -333,7 +349,7 @@ public class scanner_directory {
 		IncludeList.clear();
 		IncludedbyList.clear();
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		//--------------------dxoygen生成的xml文件夹的路径
 	  String wholepath="F:\\study document\\代码测试\\test\\out file relation\\xml\\";            
 		// 解析books.xml文件
@@ -348,6 +364,16 @@ public class scanner_directory {
 		    test.listclean();
             //test1=null;
 	      }
+	      /*
+	       * 实现的是将各个文件关系存入txt table 中
+	       */
+//	      for(FileRelation fr:Drawfile.FileRelaList){
+//	       	   System.out.println(fr.getStartpoint()+"->"+fr.getEndpoint()+"\n");
+//	          }
+	      Drawfile drawfile=new Drawfile();
+	      drawfile.scan(Drawfile.xmlpath);
+          drawfile.Printfiletable(Drawfile.FileRelaList);
+	      drawfile.listclean();
 	}
 
 }

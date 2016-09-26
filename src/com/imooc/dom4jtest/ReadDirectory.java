@@ -83,8 +83,9 @@ public class ReadDirectory {
 	 * 
 	 * @param dirPath
 	 *            给定的目录
+	 * @throws IOException 
 	 */
-	public void createXML(String Path) {
+	public void createXML(String Path) throws IOException {
 		// 1创建createXML
 		Document document = DocumentHelper.createDocument();
 		// 2创建根节点root
@@ -96,7 +97,12 @@ public class ReadDirectory {
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		format.setEncoding("GBK");
 		// 6.生成xml文件
-		File file = new File("index.xml");
+		//5.1先生成一个目录outputxml
+		File filedir = new File("outputxml");
+		if(!filedir.exists()){
+			filedir.createNewFile();
+		filedir.mkdir();}
+		File file = new File("outputxml//index.xml");
 		XMLWriter writer;
 		try {
 			writer = new XMLWriter(new FileOutputStream(file), format);
@@ -199,7 +205,7 @@ public class ReadDirectory {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		String path = "F:\\daily document";
 		// readFile(path);

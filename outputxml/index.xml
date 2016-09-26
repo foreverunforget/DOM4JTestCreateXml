@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<root path="F:\daily document">
+  <member level="1" id="1" type="directory" name="a">
+    <member level="2" id="1" type="directory" name="a1">
+      <member level="3" id="1" type="cpp" path="F:\daily document\a\a1\a.cpp">a.cpp</member>
+      <member level="3" id="2" type="c" path="F:\daily document\a\a1\b.c">b.c</member>
+      <member level="3" id="3" type="h" path="F:\daily document\a\a1\c.h">c.h</member>
+    </member>
+  </member>
+  <member level="1" id="2" type="directory" name="package">
+    <member level="2" id="2" type="file" path="F:\daily document\package\d.docx">d.docx</member>
+  </member>
+</root>
